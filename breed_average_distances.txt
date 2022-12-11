@@ -1,0 +1,9 @@
+American Shorthair: 58.8656
+Domestic Long Hair: 50.72296
+Domestic Medium Hair: 50.205299999999994
+Domestic Short Hair: 49.10541449275363
+Extra-Toes Cat / Hemingway Polydactyl: 72.13115
+Siamese: 55.093050000000005
+Tabby: 44.7338875
+Tortoiseshell: 54.78215
+Tuxedo: 58.7748
