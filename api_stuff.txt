@@ -1,0 +1,2 @@
+secret: uhdeONDWDcqiWmU1sR9aNk5DVCQhVY8BKOe0pIut
+api key: 25KmFzF7mqAiSsReISZphGQ9S843SseGbfiQnzQH5hLc4qj6iK
