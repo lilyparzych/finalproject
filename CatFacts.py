@@ -80,10 +80,10 @@ def get_expensive_cat_breeds(dict_of_info):
 
 def main(): 
     html = get_html_file("https://thediscerningcat.com/getting-a-cat/")
-    # print(get_cat_info_from_web(html))
+    #print(get_cat_info_from_web(html))
     # print("rare_cat_breeds")
     # print("------------------")
-    # print(get_rare_cat_breeds(get_cat_info_from_web(html)))
+    print(get_rare_cat_breeds(get_cat_info_from_web(html)))
     # print("expensive_cat_breeds")
     # print("------------------")
     # print(get_expensive_cat_breeds(get_cat_info_from_web(html)))

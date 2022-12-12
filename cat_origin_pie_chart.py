@@ -41,7 +41,7 @@ def pie_chart(dict_of_origins):
     for label in labels: 
         sizes.append(dict_of_origins[label])
 
-    explode = (0.1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    explode = (0,0,0.1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
     print(len(explode))
 
     startangle = 360/num_of_countries
