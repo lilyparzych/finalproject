@@ -1,5 +1,5 @@
 
-
+#gives back facts on the rare breeds, expensive breeds
 from bs4 import BeautifulSoup
 import re
 import os
@@ -46,9 +46,16 @@ def get_rare_cat_breeds(dict_of_info):
             cats = re.findall(reg_ex, cat)
             
             full_name = " ".join(cats)
-            rare_cat_breeds.append(full_name)
+            cleaned_full_name = clean_full_name(full_name)
+            rare_cat_breeds.append(cleaned_full_name)
 
     return rare_cat_breeds
+
+# Function to clean typos from cat's names
+def clean_full_name(full_name):
+    if full_name == "Eyptian Mau":
+        return "Egyptian Mau"
+    return full_name
 
 def get_expensive_cat_breeds(dict_of_info):
     expensive_cat_breeds = []

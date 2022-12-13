@@ -47,9 +47,14 @@ def pie_chart(dict_of_origins):
     startangle = 360/num_of_countries
     
     fig1, ax1 = plt.subplots()
+    textprops = {
+        "fontsize": 8
+    }
     ax1.pie(sizes, explode = explode, labels = labels, 
+    textprops= textprops,
     autopct = '%1.1f%%', shadow = False, startangle= startangle)
-
+    plt.xticks(fontsize = 10)
+    plt.tight_layout()
     ax1.axis('equal')
 
     plt.show()
