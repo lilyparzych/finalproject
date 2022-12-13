@@ -48,6 +48,7 @@ def get_orgs():
             'page': i
         }
         responses[f"page{i}"] = requests.get(f'https://api.petfinder.com/v2/organizations',params=params, headers=headers).json()
+        
     return responses
     #print(org_ids)
 
@@ -64,6 +65,8 @@ def add_orgs_from_responses(cur,conn,responses):
             break
     conn.commit()
 
+
+
 def add_org_to_database(cur,conn,org):
     if(len(cur.execute("SELECT id FROM Orgs WHERE id = ?",(org["id"],)).fetchall()) == 0):
         cur.execute("INSERT OR IGNORE INTO Orgs (id, name, email, phone, url, distance) VALUES (?,?,?,?,?,?)", (org["id"],org["name"],org["email"],org["phone"],org["url"],org["distance"]))
@@ -71,9 +74,6 @@ def add_org_to_database(cur,conn,org):
         return 1
     else: 
         return 0
-    
-    
-
 
 
 def create_animals_table(cur,conn):
@@ -112,6 +112,7 @@ def add_animals_from_responses(cur,conn,animal_responses):
             break
     conn.commit()
 
+
 #create org database
 def main():
     cur,conn = open_database("cat_database.db")
@@ -129,7 +130,7 @@ def main():
         for item in rows:
             f.write(item[0] + ": "+ str(item[1]) + '\n')
 
-    #join 
+     
     rows = cur.execute("SELECT Animals.organization_id, Count(*) FROM Animals INNER JOIN Orgs ON Orgs.id=Animals.organization_id GROUP BY Animals.organization_id").fetchall()
 
 if __name__ == "__main__":
