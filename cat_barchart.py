@@ -1,13 +1,30 @@
 from matplotlib import pyplot as plt
+import os
+import sqlite3
 
-width = .75
+def open_database(db_name):
+    path = os.path.dirname(os.path.abspath(__file__))
+    conn = sqlite3.connect(path+'/'+db_name)
+    cur = conn.cursor()
+    return cur, conn
 
-x_axis = ["American\nShorthair", "Domestic\nLong\nHair", "Domestic\nMedium\nHair", "Domestic\nShort\nHair", "Extra-Toes Cat", "Siamese", "Tabby", "Tortoise-\nshell", "Tuxedo"]
+cur,conn = open_database("cat_database.db")
 
-y_axis = [58.8656, 50.72296, 50.205299999999994, 49.10541449275363, 72.13115, 55.093050000000005, 44.7338875, 54.78215, 58.7748]
 
-plt.bar(x_axis, y_axis, width=width)
-plt.title("Average Distance from AA of Adoptable Cat by Breed")
-plt.xlabel("Cat Breed")
-plt.ylabel("Average Distance from Ann Arbor")
-plt.show()
+
+def create_bar_chart(labels: list,data: list):
+    width = .8
+    color = "#28a993"
+    plt.bar(labels, data, width=width, color=color)
+    plt.title("Average Distance of Available Cat from AA by Breed", fontweight="bold")
+    plt.xlabel("Cat Breed", fontweight="bold")
+    plt.ylabel("Average Distance from\nAnn Arbor", fontweight="bold")
+    plt.xticks(rotation=90, fontsize=8)
+    plt.tight_layout()
+    plt.show()
+
+
+rows = (cur.execute("SELECT breed, AVG(distance) FROM Animals GROUP BY breed").fetchall())
+lambda_labels = [rows[i][0] for i in range(len(rows))]
+lambda_data = [row[1] for row in rows]
+create_bar_chart(lambda_labels,lambda_data)

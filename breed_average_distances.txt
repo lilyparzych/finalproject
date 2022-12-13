@@ -1,9 +1,14 @@
-American Shorthair: 58.8656
-Domestic Long Hair: 50.72296
-Domestic Medium Hair: 50.205299999999994
-Domestic Short Hair: 49.10541449275363
-Extra-Toes Cat / Hemingway Polydactyl: 72.13115
-Siamese: 55.093050000000005
-Tabby: 44.7338875
-Tortoiseshell: 54.78215
-Tuxedo: 58.7748
+Abyssinian: 53.3439
+American Shorthair: 63.56368333333332
+Bombay: 35.9392
+Domestic Long Hair: 57.256766666666664
+Domestic Medium Hair: 51.897053846153845
+Domestic Short Hair: 50.95425803571429
+Extra-Toes Cat / Hemingway Polydactyl: 79.11110000000001
+Maine Coon: 53.3439
+Persian: 53.3439
+Siamese: 50.88810000000001
+Tabby: 45.49521111111111
+Torbie: 42.819900000000004
+Tortoiseshell: 63.55643333333334
+Tuxedo: 63.240840000000006
